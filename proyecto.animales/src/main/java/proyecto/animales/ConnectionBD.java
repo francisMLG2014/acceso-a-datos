@@ -11,13 +11,13 @@ public static Connection connection;
 		String namebd="bdzoologico";
 		String user="root";
 		String pass="root";
-		if(connection==null) {
+		
 			try {
 				connection=DriverManager.getConnection("jdbc:mysql://localhost/"+namebd,user,pass);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}
+		
 		return connection;
 	}
 	
