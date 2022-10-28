@@ -60,6 +60,12 @@ public class Serie {
 	public int getId() {
 		return id;
 	}
+
+	@Override
+	public String toString() {
+		return "Serie [id=" + id + ", titulo=" + titulo + ", edad=" + edad + ", plataforma=" + plataforma
+				+ ", temporadas=" + temporadas + "]";
+	}
 	
 	
 	

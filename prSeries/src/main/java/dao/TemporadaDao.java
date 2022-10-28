@@ -28,7 +28,19 @@ public class TemporadaDao implements Dao<Temporada>{
 
 	public void insertar(Temporada t) {
 		connection=openConnection();
-		
+		String query="insert into temporadas (num_temporada,titulo_temporada,serie_id) values(?,?,?);";
+		try {
+			PreparedStatement ps=connection.prepareStatement(query);
+			ps.setInt(1, t.getNum_temporada());
+			ps.setString(2, t.getTitulo());
+			ps.setInt(3, t.getSerie().getId());
+			ps.executeUpdate();
+			
+			
+		} catch (SQLException e) {
+			closeConnection();
+			e.printStackTrace();
+		}
 		
 		
 		closeConnection();

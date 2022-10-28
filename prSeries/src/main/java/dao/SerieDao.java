@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -25,8 +26,27 @@ public class SerieDao implements Dao<Serie>{
 
 	public Serie buscarPorId(int i) {
 		connection=openConnection();
+		String query="select * from series where id = ?";
+		Serie serie=null;
+		try {
+			PreparedStatement ps=connection.prepareStatement(query);
+			ps.setInt(1, i);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()) {
+				serie= new Serie(rs.getInt("id"),
+						rs.getString("titulo"),
+						rs.getInt("edad"),
+						rs.getString("plataforma"),
+						null);//TODO hacer que te devuelva el conteo de todas las temporadas
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		closeConnection();
-		return null;
+		return serie;
 	}
 
 	public void insertar(Serie t) {
