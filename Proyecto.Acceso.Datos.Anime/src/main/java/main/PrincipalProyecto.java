@@ -6,7 +6,11 @@ import daos.AnimeDAO;
 import daos.TemporadaDAO;
 import pojos.Anime;
 import pojos.Temporada;
-
+/**
+ * Clase que contiene al metodo main, donde interactuamos con una base de datos, pojos y sus respectivos DAOs.
+ * @author Francisco Jose
+ *
+ */
 public class PrincipalProyecto {
 
 	public static void main(String[] args) {

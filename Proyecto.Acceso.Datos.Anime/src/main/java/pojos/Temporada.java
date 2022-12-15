@@ -1,5 +1,10 @@
 package pojos;
 
+/**
+ * Clase que reune todos los metodos necesarios para gestionar temporadas
+ * @author Francisco Jose
+ *
+ */
 public class Temporada {
 	private int id;
 	private int numeroTemporada;

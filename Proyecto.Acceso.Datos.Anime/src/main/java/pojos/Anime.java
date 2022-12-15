@@ -1,10 +1,17 @@
 package pojos;
 
+/**
+ * Clase que reune los metodos necesarios para crear y gestionar animes.
+ * @author Francisco Jose
+ *
+ */
 public class Anime {
 	private int id;
 	private String titulo;
 	private String titulojapones;
 	private boolean enEmision;
+	
+	
 	public Anime(int id, String titulo, String titulojapones, boolean enEmision) {
 		super();
 		this.id = id;
